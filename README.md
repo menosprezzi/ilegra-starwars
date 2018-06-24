@@ -1,27 +1,41 @@
 # IlegraStarwars
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Um [PWA](https://developers.google.com/web/progressive-web-apps/) desenvolvido para o desafio FrontEnd Ilegra.
 
-## Development server
+## Tecnologias Utilizadas:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Aplicação desenvolvida utilizando do NG-CLI 6.
+* *ServiceWorker* para cacheamento de recursos, desenvolvido com ngsw.
+* *Lazy Routes*, com chunks separados para cada módulo da aplicação.
+* Build básico do Bootstrap 4, trazendo ferramentas basicas como Flex Layout.
+* Material Icons.
+* YouTube API.
 
-## Code scaffolding
+## Notas do Desenvolvedor
+> Optei por não utilizar um framework de UI junto ao Angular para não sobrecarregar a aplicação, tendo em vista de se tratar de uma aplicação simples.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Rodando a Aplicação
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Para executar a aplicação em *localhost*, basta executar:
+``` bash
+ng serve
+```
 
-## Running unit tests
+### PWA
+Para testar o PWA:
+``` bash
+ng serve --host 0.0.0.0
+```
+E acessar de qualquer smartphone na mesma rede pela URL `<ip do host>:4200`.
+Após isso, pode-se adicionar o site à tela inicial:
+![Add to home screen](https://s3.amazonaws.com/GoRoost-Heroku/wp-content/uploads/2015/07/add-to-homescreen-add-button-3.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Se deseja testar o PWA e as funcionalidades Offline:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+``` bash
+ng build --prod
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Logo após, deve-se submeter os códigos gerados em `/dist/ilegra-starwars/` à algum servidor preparado com HTTPS, uma vez que [SW's não irão se registrar a partir de um domínio nao seguro](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers).

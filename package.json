@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-external": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "publish-site": "ng build --prod && cd ./dist/ilegra-starwars && git init && git remote add origin https://github.com/menosprezzi/ilegra-starwars.git && git add -A && git commit -a -m Publish && git push -f --set-upstream origin master"
   },
   "private": true,
   "dependencies": {

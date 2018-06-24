@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
         this.films = results.map((film, index) => {
           return {
             id: index + 1,
-            coverURL: this.sanitizer.bypassSecurityTrustResourceUrl(`/assets/lazy/images/sd/films/${index + 1}.jpg`),
+            coverURL: this.sanitizer.bypassSecurityTrustResourceUrl(`assets/lazy/images/sd/films/${index + 1}.jpg`),
           };
         });
       },
