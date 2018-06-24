@@ -1,0 +1,15 @@
+@import "../../theme";
+
+.section-films {
+  position: relative;
+  .card {
+    width: 20%;
+    @include down-lg {
+      width: 40%;
+    }
+    @include down-sm {
+      margin: 6px;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<section class="section-films container mt-5">
+  <h1>
+    Filmes
+  </h1>
+  <hr>
+  <div class="row justify-content-center">
+    <a *ngFor="let film of films" class="card hoverable scale" routerLink="film/{{film.id}}">
+      <div class="card-image">
+        <img [src]="film.coverURL">
+      </div>
+    </a>
+  </div>
+</section>
+
