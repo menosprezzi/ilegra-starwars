@@ -1,9 +1,10 @@
 {
-  "name": "ilegra-starwars",
-  "short_name": "ilegra-starwars",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Ilegra Star Wars",
+  "short_name": "Ilegra Star Wars",
+  "theme_color": "#000",
+  "background_color": "#000",
   "display": "standalone",
+  "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
   "icons": [
