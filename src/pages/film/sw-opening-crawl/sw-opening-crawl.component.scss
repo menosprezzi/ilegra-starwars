@@ -1,0 +1,38 @@
+// Based on work from Tim Pietrusky: https://codepen.io/TimPietrusky/pen/eHGfj
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  font-weight: bold;
+  font-size: 24px;
+  color: #ff6;
+  text-align: justify;
+  background: linear-gradient(rgb(0,0,0) 10%, rgb(20,20,20) 100%) !important;
+  overflow: hidden;
+}
+
+.titles-perspective {
+  max-height: 100%;
+  overflow: scroll;
+
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(25deg);
+
+
+  .titles-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .titles {
+      position: relative;
+      width: 100%;
+      max-width: 576px;
+      & > p {
+        backface-visibility: hidden;
+      }
+    }
+  }
+}

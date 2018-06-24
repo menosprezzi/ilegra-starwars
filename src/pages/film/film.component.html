@@ -1,0 +1,104 @@
+<div class="content-wrapper">
+  <app-sw-opening-crawl *ngIf="film && displayContent == 'OPENING'" [text]="film.opening_crawl">
+  </app-sw-opening-crawl>
+  <app-yt-embedded-search *ngIf="film && displayContent == 'TRAILER'" [query]="('Star Wars '+ film.title + ' Trailer')">
+  </app-yt-embedded-search>
+</div>
+
+<div class="row justify-content-center">
+  <button class="btn btn-tab"
+          (click)="setDisplayContent('TRAILER')"
+          [ngClass]="{activated: displayContent == 'TRAILER'}">
+    Trailer
+  </button>
+  <button class="btn btn-tab"
+          (click)="setDisplayContent('OPENING')"
+          [ngClass]="{activated: displayContent == 'OPENING'}">
+    Abertura
+  </button>
+</div>
+
+<section class="container mt-5">
+  <h1>Star Wars II</h1>
+  <h2>A New Hope</h2>
+  <hr>
+  <div *ngIf="film" class="row">
+    <div class="box col-sm-4">
+      <div class="box-image">
+        <i class="material-icons">movie</i>
+      </div>
+      <div class="box-content">
+        <div class="box-title">{{ film.director }}</div>
+        <small>Diretor</small>
+      </div>
+    </div>
+
+    <div class="box col-sm-4">
+      <div class="box-image">
+        <i class="material-icons">play_circle_filled</i>
+      </div>
+      <div class="box-content">
+        <div class="box-title">{{ film.producer }}</div>
+        <small>Produtor</small>
+      </div>
+    </div>
+
+    <div class="box col-sm-4">
+      <div class="box-image">
+        <i class="material-icons">calendar_today</i>
+      </div>
+      <div class="box-content">
+        <div class="box-title">{{ film.release_date | date : 'dd/MM/yyyy' }}</div>
+        <small>Data de Lançamento</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="characters.length > 0" class="container mt-3">
+  <h3>Personagens</h3>
+  <hr>
+  <div class="row">
+    <div *ngFor="let char of characters" class="box col-4 col-sm-3 col-lg-2">
+      <div class="box-image placeholder rounded-circle">
+        <i class="material-icons">person</i>
+      </div>
+      <div class="box-content">
+        <small>{{ char.name }}</small>
+      </div>
+    </div>
+
+    <!--<div class="box col-4 col-sm-3 col-lg-2">-->
+      <!--<div class="box-image placeholder rounded-circle">-->
+        <!--<i class="material-icons">person</i>-->
+      <!--</div>-->
+      <!--<div class="box-content">-->
+        <!--<small>Fulano de Tal</small>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="box col-4 col-sm-3 col-lg-2">-->
+      <!--<div class="box-image placeholder rounded-circle">-->
+        <!--<i class="material-icons">person</i>-->
+      <!--</div>-->
+      <!--<div class="box-content">-->
+        <!--<small>Fulano de Tal</small>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="box col-4 col-sm-3 col-lg-2">-->
+      <!--<div class="box-image placeholder rounded-circle">-->
+        <!--<i class="material-icons">person</i>-->
+      <!--</div>-->
+      <!--<div class="box-content">-->
+        <!--<small>Fulano de Tal</small>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="box col-4 col-sm-3 col-lg-2">-->
+      <!--<div class="box-image placeholder rounded-circle">-->
+        <!--<i class="material-icons">person</i>-->
+      <!--</div>-->
+      <!--<div class="box-content">-->
+        <!--<small>Fulano de Tal</small>-->
+      <!--</div>-->
+    <!--</div>-->
+  </div>
+</section>
