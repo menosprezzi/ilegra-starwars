@@ -1,0 +1,8 @@
+<div class="text-center">
+  <i *ngIf="!useLuke" class="material-icons">error</i>
+  <img *ngIf="useLuke" class="rounded-circle" src="assets/images/luke-error.png">
+  <div class="error-title">Erro!</div>
+  <div *ngIf="useLuke" class="error-content">&ldquo;Luke, I'am your father.&rdquo;</div>
+  <button class="btn solid" (click)="handleTryAgain($event)">Tentar Novamente</button>
+</div>
+

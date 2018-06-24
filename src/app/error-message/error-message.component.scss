@@ -1,0 +1,38 @@
+@import "../../theme";
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: $light-fog-color;
+  font-size: 24px;
+
+  @include down-sm {
+    font-size: 18px;
+  }
+}
+
+.error-title {
+  margin-top: 6px;
+  color: $white-read;
+  text-transform: uppercase;
+}
+
+.error-content {
+  font-style: italic;
+}
+
+img {
+  width: 128px;
+  @include down-sm {
+    width: 72px;
+  }
+}
+
+i {
+  font-size: 128px;
+  @include down-sm {
+    font-size: 72px;
+  }
+}
