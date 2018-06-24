@@ -1,14 +1,23 @@
-<section class="section-films container mt-5">
+<section class="section-films container mt-5 flex-layout">
   <h1>
     Filmes
   </h1>
   <hr>
-  <div class="row justify-content-center">
+
+  <!-- Loading State -->
+  <div *ngIf="isLoading" class="centered-container">
+    <app-spinner [size]="48"></app-spinner>
+  </div>
+
+  <!-- Films -->
+  <div *ngIf="!isLoading" class="row justify-content-center">
     <a *ngFor="let film of films" class="card hoverable scale" routerLink="film/{{film.id}}">
       <div class="card-image">
         <img [src]="film.coverURL">
       </div>
     </a>
   </div>
+
+  <app-error-message *ngIf="error" [useLuke]="true" (tryAgain)="loadFilms()"></app-error-message>
 </section>
 

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilmComponent } from './film.component';
 import { YtEmbeddedSearchComponent } from './yt-embedded-search/yt-embedded-search.component';
 import { SwOpeningCrawlComponent } from './sw-opening-crawl/sw-opening-crawl.component';
+import {SharedModule} from '../../app/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SwOpeningCrawlComponent } from './sw-opening-crawl/sw-opening-crawl.com
     SwOpeningCrawlComponent,
   ],
   imports: [
+    SharedModule,
     CommonModule,
     HttpClientModule,
     RouterModule.forChild([

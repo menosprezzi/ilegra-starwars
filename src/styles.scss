@@ -5,7 +5,7 @@
 body, html {
   overflow-x: hidden;
   overflow-y: hidden;
-
+  height: 100vh;
   background: $secondary-color;
   @extend %body-typo;
 }
@@ -41,6 +41,14 @@ button {
   outline: none !important;
 }
 
+
+.flex-layout {
+  height: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: column;
+}
+
 .app-content {
   padding-top: 0px;
   overflow-y: auto;
@@ -53,8 +61,13 @@ button {
     margin-top: $nav-bar-height;
     max-height: calc(100vh - #{$nav-bar-height});
   }
-  & > * {
+  & > router-outlet + * {
     display: block;
+
+    height: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: column;
   }
 }
 
@@ -62,25 +75,43 @@ button {
   @extend %input-metrics;
   @extend %body-typo;
   text-transform: uppercase;
-  margin: 0px;
+  user-select: none;
   transition: $default-transition;
+  border: 0px;
+  background: $primary-color;
+
+  &.solid {
+    box-shadow: $solid-shadow;
+    &:hover {
+      box-shadow: $fog-shadow;
+    }
+    &:active {
+      box-shadow: $solid-shadow;
+    }
+  }
+
   &.btn-tab {
+    margin: 0px;
     background: transparent;
     border: 2px solid transparent;
     opacity: 0.8;
-    transform: scale(0.90);
-    &:hover {
-      transform: scale(1.02);
-    }
+    transform: scale(0.92);
+
     &:active {
       opacity: 1;
-      transform: scale(1);
     }
     &.activated {
       border-top: 2px solid $lightsaber-blue;
       opacity: 1;
       transform: scale(1);
     }
+  }
+
+  &:hover {
+    transform: scale(1);
+  }
+  &:active {
+    transform: scale(0.98);
   }
 }
 
@@ -93,7 +124,7 @@ button {
     overflow: hidden;
     img {
       @extend %cant-drag;
-      max-width: 100%;
+      width: 100%;
     }
   }
   .card-content {
@@ -123,14 +154,25 @@ button {
     text-align: center;
     .box-title {
       display: inline-block;
+      vertical-align: bottom;
       border-radius: 2px;
       padding: 2px;
       margin: 2px;
       color: #000;
       background: white;
+      i {
+        vertical-align: middle;
+      }
     }
     small {
       display: block;
     }
   }
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

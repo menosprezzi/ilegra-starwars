@@ -1,3 +1,7 @@
+<div class="centered-container" *ngIf="!youtubeVideoId">
+  <app-spinner [size]="48"></app-spinner>
+</div>
+
 <iframe *ngIf="youtubeVideoId" class="embedded-content"
         [src]="youtubeSrcUrl"
         frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
