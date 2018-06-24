@@ -29,6 +29,7 @@ ng serve --host 0.0.0.0
 ```
 E acessar de qualquer smartphone na mesma rede pela URL `<ip do host>:4200`.
 Após isso, pode-se adicionar o site à tela inicial:
+
 ![Add to home screen](https://s3.amazonaws.com/GoRoost-Heroku/wp-content/uploads/2015/07/add-to-homescreen-add-button-3.png)
 
 
