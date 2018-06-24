@@ -1,0 +1,113 @@
+$primary-color: #000;
+$secondary-color: #162025;
+$fog-color: rgba(0,0,0,.3);
+$light-fog-color: rgba(255,255,255,.1);
+$lightsaber-blue: #3273c5;
+
+// METRICS
+$nav-bar-height: 56px;
+$nav-bar-expanded-height: 76px;
+
+$card-padding: 6px;
+$card-margin: 2px;
+
+$input-margin: 6px;
+$input-padding: 10px 20px;
+
+%input-metrics {
+  padding: $input-padding;
+  margin: $input-margin;
+  font-size: 16px;
+}
+
+// LAYERS
+$z-nav-bar-layer: 10;
+
+
+// EFFECTS
+$default-transition: .167s ease-out;
+
+$fog-shadow: 0 8px 16px 0 $fog-color;
+$solid-shadow: 0 1px 0px 0 $fog-color;
+$lightsaber-beam: 0 0px 2px 0 $lightsaber-blue;
+
+%hover-paper-behavior {
+  transition: $default-transition;
+  border: 2px solid transparent;
+
+  &:hover {
+    box-shadow: $fog-shadow !important;
+    &.scale { transform: scale(1.02); }
+  }
+  &:active {
+    border: 2px solid $lightsaber-blue;
+    box-shadow: $lightsaber-beam !important;
+    transform: scale(1);
+  }
+}
+
+// TYPOGRAPHY
+$black-read: #292b2c;
+$white-read: #ddd;
+
+$default-read: $white-read;
+
+$primary-font: 'Rubik', sans-serif;
+$secondary-font: 'Rubik', sans-serif;
+
+%body-typo {
+  font-family: $primary-font;
+  font-weight: 300;
+  color: $white-read;
+}
+
+%main-typo {
+  font-family: $secondary-font;
+  font-weight: bold;
+  color: $white-read;
+}
+
+// TOOLS
+%cant-drag {
+  pointer-events: none;
+  user-drag: none;
+  user-select: none;
+}
+
+// RESPONSIVENESS
+$sm-width: 576px;
+$md-width: 768px;
+$lg-width: 992px;
+$xl-width: 1200px;
+
+@mixin down-sm {
+  @media (max-width: $sm-width) { @content }
+}
+
+@mixin up-sm {
+  @media (min-width: $sm-width) { @content }
+}
+
+@mixin down-md {
+  @media (max-width: $md-width) { @content }
+}
+
+@mixin up-md {
+  @media (min-width: $md-width) { @content }
+}
+
+@mixin down-lg {
+  @media (max-width: $lg-width) { @content }
+}
+
+@mixin up-lg {
+  @media (min-width: $lg-width) { @content }
+}
+
+@mixin down-xl {
+  @media (max-width: $xl-width) { @content }
+}
+
+@mixin up-xl {
+  @media (min-width: $xl-width) { @content }
+}

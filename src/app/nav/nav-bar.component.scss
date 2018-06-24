@@ -1,0 +1,57 @@
+@import "../../theme";
+
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: $nav-bar-expanded-height;
+  z-index: $z-nav-bar-layer;
+
+  align-items: center;
+  background: $primary-color;
+  color: white;
+
+  transition: $default-transition;
+
+  &.transparent {
+    &.scrolled {
+      background: $primary-color;
+    }
+    background: transparent;
+  }
+
+  &.scrolled {
+    height: $nav-bar-height;
+    .nav-logo {
+      height: ($nav-bar-height - 20px);
+    }
+    box-shadow: $fog-shadow;
+  }
+
+  @include down-sm {
+    height: $nav-bar-height !important;
+    padding: 8px 0px;
+    .nav-logo {
+      height: 36px !important;
+    }
+  }
+}
+
+.nav-logo {
+  height: ($nav-bar-expanded-height - 8px);
+  transition: inherit;
+
+  @extend %cant-drag;
+}
+
+.nav-title {
+  margin-left: 16px;
+  flex: 0 0 100%;
+  line-height: 16px;
+}
+
+.nav-right {
+  justify-content: end;
+}
